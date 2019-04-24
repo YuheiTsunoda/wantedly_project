@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 // import './App.css';
 import Form from "./Form";
-import List from "./List";
+import TodoList from "./TodoList";
 
 export default class App extends Component {
     constructor(props) {
@@ -43,7 +43,7 @@ export default class App extends Component {
                     <h1 className="simple-box-title simple--color-white">React Todo App</h1>
                     <Form handleAdd={this.handleAdd}/>
                     <div className="simple-rule"></div>
-                    <List todos={this.state.todo} handleRemove={this.handleRemove}/>
+                    <TodoList todos={this.state.todo} handleRemove={this.handleRemove}/>
                 </div>
             </div>
         );
