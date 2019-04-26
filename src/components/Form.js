@@ -1,32 +1,30 @@
-import React, {Component} from 'react';
+import React from 'react';
 import Input from "@material-ui/core/Input";
 import Fab from "@material-ui/core/Fab";
 import AddIcon from '@material-ui/icons/Add';
-import Icon from '@material-ui/core/Icon';
-// import TextField from '@material-ui/core/TextField';
+import {FormControl, InputLabel} from "@material-ui/core";
+import Grid from "@material-ui/core/Grid";
 
 
 const Form = (props) => (
-    <form className="simple-form" onSubmit={props.handleAdd}>
-        <div className="simple-form-field">
-            <label className="simple-label simple--color-white">Your todo:</label>
-            {/*<input name="title" type="text" className="simple-input"/> */}
-            {/*<input type="submit" value="Add" className="simple-btn simple-btn--teal"/>*/}
-            <Input
-                placeholder="Placeholder"
-                className="input"
-                name="title"
-                type="text"
-                inputProps={{
-                    'aria-label': 'Description',
-                }}
-            />
-            <Fab color="secondary" size="small" aria-label="Add" type="submit" value="Add">
-                <AddIcon/>
-            </Fab>
+    <Grid container spacing={0} justify="center">
+        <form className="simple-form" onSubmit={props.handleAdd}>
+            <FormControl>
+                <Grid item xs={12}>
+                    <InputLabel>Your todo</InputLabel>
+                    <Input
 
-        </div>
-    </form>
+                        className="input"
+                        name="title"
+                        type="text"
+                    />
+                    <Fab color="secondary" size="small" aria-label="Add" type="submit" value="Add">
+                        <AddIcon/>
+                    </Fab>
+                </Grid>
+            </FormControl>
+        </form>
+    </Grid>
 );
 
 export default Form;

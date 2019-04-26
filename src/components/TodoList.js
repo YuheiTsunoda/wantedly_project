@@ -9,7 +9,7 @@ import ListItemSecondaryAction from "@material-ui/core/ListItemSecondaryAction";
 import IconButton from "@material-ui/core/IconButton";
 import FolderIcon from '@material-ui/icons/Folder';
 import DeleteIcon from '@material-ui/icons/Delete';
-
+import Checkbox from "@material-ui/core/Checkbox";
 
 
 let style = {
@@ -23,17 +23,15 @@ let btn = {
 const TodoList = (props) => (
     <ul className="siimple-list">
         {props.todos.map((todo, i) => {
-            // return <li key={i} className="" style={style}>{todo.title} <span
-            //         className="" style={btn}
-            //         onClick={() => props.handleRemove(i)}>Delete</span></li>
-            return(
+            return (
                 <List key={i} className="" style={style}>
                     <ListItem>
-                        <ListItemAvatar>
-                            <Avatar>
-                                <FolderIcon/>
-                            </Avatar>
-                        </ListItemAvatar>
+                        <Checkbox value="checked" size="medium" onChange={() => props.handleChecked(i)}/>
+                        {/*<ListItemAvatar>*/}
+                        {/*    <Avatar>*/}
+                        {/*        <FolderIcon/>*/}
+                        {/*    </Avatar>*/}
+                        {/*</ListItemAvatar>*/}
                         <ListItemText
                             primary={todo.title}
                             // secondary={secondary ? 'Secondary text' : null}
